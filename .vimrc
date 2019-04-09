@@ -3,6 +3,7 @@ colorscheme monokai
 
 filetype plugin on
 
+" General Config
 set number
 set relativenumber
 set autoread
@@ -10,6 +11,8 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set encoding=UTF-8
+set mouse=nv
 
 let mapleader = ' '
 
@@ -80,22 +83,33 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'ryanolsonx/vim-lsp-javascript'
 Plug 'w0rp/ale'
 
-Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'tpope/vim-sensible'
-Plug 'ctrlpvim/ctrlp.vim'
+" Style
 Plug 'sickill/vim-monokai'
+
+" Language support
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'mxw/vim-jsx'
+Plug 'ianks/vim-tsx'
+Plug 'hdima/python-syntax'
+Plug 'leafgarland/typescript-vim'
+Plug 'styled-components/vim-styled-components'
+
+" Search
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lokikl/vim-ctrlp-ag'
 Plug 'ivalkeen/vim-ctrlp-tjump'
+
+" General
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
-Plug 'hdima/python-syntax'
 Plug 'mattn/emmet-vim'
 Plug 'scooloose/nerdtree'
-Plug 'mxw/vim-jsx'
-Plug 'ianks/vim-tsx'
-Plug 'leafgarland/typescript-vim'
-Plug 'styled-components/vim-styled-components'
+
+" Icons, must be the last install
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
