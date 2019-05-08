@@ -2,6 +2,7 @@ syntax enable
 colorscheme monokai
 
 filetype plugin on
+au BufNewFile,BufRead *.svelte set filetype=html
 
 " General Config
 set number
@@ -13,6 +14,7 @@ set softtabstop=2
 set shiftwidth=2
 set encoding=UTF-8
 set mouse=nv
+tnoremap <Esc> <C-\><C-n>
 
 let mapleader = ' '
 
@@ -34,9 +36,17 @@ let g:ctrlp_ag_ignores = '--ignore .git
 " let g:ctrlp_ag_search_base = 'current-file-dir'
 " let g:ctrlp_ag_search_base = 'app/controllers' " both relative and absolute path supported
 
-
+" Ale Config
 let g:ale_completion_enabled = 1
 let g:ale_completion_max_suggestions = 5
+let g:ale_completion_delay = 200
+
+
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\  'javascript': ['prettier'],
+\  'css': ['prettier'],
+\}
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -61,9 +71,12 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
+" Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
+" Which Key
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 
 " Register LSP (Autocomplete)
 
@@ -82,6 +95,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'ryanolsonx/vim-lsp-javascript'
 Plug 'w0rp/ale'
+Plug 'liuchengxu/vim-which-key'
 
 " Style
 Plug 'sickill/vim-monokai'
@@ -93,11 +107,13 @@ Plug 'ianks/vim-tsx'
 Plug 'hdima/python-syntax'
 Plug 'leafgarland/typescript-vim'
 Plug 'styled-components/vim-styled-components'
+Plug 'posva/vim-vue'
 
 " Search
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'lokikl/vim-ctrlp-ag'
 Plug 'ivalkeen/vim-ctrlp-tjump'
+Plug 'rking/ag.vim'
 
 " General
 Plug 'tpope/vim-sensible'
