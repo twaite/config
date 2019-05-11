@@ -1,5 +1,12 @@
-syntax enable
-colorscheme monokai
+set termguicolors
+let ayucolor="mirage"
+colorscheme ayu
+
+let g:indentLine_char = '⎸'
+let g:indentLine_first_char = '⎸'
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
+let g:better_whitespace_enabled = 1
 
 filetype plugin on
 au BufNewFile,BufRead *.svelte set filetype=html
@@ -22,9 +29,9 @@ let mapleader = ' '
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-nnoremap <c-f> :CtrlPag<cr>
+nnoremap <leader>ca :CtrlPag<cr>
 vnoremap <c-f> :CtrlPagVisual<cr>
-nnoremap <leader>ca :CtrlPagLocate
+nnoremap <c-f> :CtrlPagLocate<space>
 nnoremap <leader>cp :CtrlPagPrevious<cr>
 let g:ctrlp_ag_ignores = '--ignore .git
     \ --ignore "deps/*"
@@ -35,6 +42,7 @@ let g:ctrlp_ag_ignores = '--ignore .git
 " Using the magic word 'current-file-dir' to use current file base directory
 " let g:ctrlp_ag_search_base = 'current-file-dir'
 " let g:ctrlp_ag_search_base = 'app/controllers' " both relative and absolute path supported
+
 
 " Ale Config
 let g:ale_completion_enabled = 1
@@ -47,6 +55,8 @@ let g:ale_fixers = {
 \  'javascript': ['prettier'],
 \  'css': ['prettier'],
 \}
+
+nnoremap <leader>af :ALEFix prettier<cr>
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -75,8 +85,16 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 " Which Key
-nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+noremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
+
+" Yankstack
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+
+" Emmet
+let g:user_emmet_leader_key='<C-Y>'
+let g:user_emmet_install_global = 1
 
 " Register LSP (Autocomplete)
 
@@ -87,7 +105,6 @@ if executable('css-languageserver')
     \ 'whitelist': ['css', 'less', 'sass', 'scss'],
     \ })
 endif
-
 
 call plug#begin()
 " Linting / autocomplete
@@ -116,6 +133,7 @@ Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'rking/ag.vim'
 
 " General
+Plug 'ayu-theme/ayu-vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -124,6 +142,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'mattn/emmet-vim'
 Plug 'scooloose/nerdtree'
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'tpope/vim-abolish'
+Plug 'Yggdroot/indentLine'
+Plug 'ntpeters/vim-better-whitespace'
 
 " Icons, must be the last install
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
