@@ -1,6 +1,18 @@
 set termguicolors
-let ayucolor="mirage"
+
+if exists('g:color_scheme')
+  let ayucolor=g:color_scheme
+  let g:airline_theme='ayu_' . g:color_scheme
+else
+  let ayucolor='mirage'
+  let g:airline_theme='ayu_mirage'
+endif
+
 colorscheme ayu
+
+" These commands let me switch the theme on the fly
+nnoremap <leader>ctl :let g:color_scheme = 'light'<cr>:so ~/.vimrc<cr>
+nnoremap <leader>ctd :let g:color_scheme = 'mirage'<cr>:so ~/.vimrc<cr>
 
 let g:indentLine_char = '⎸'
 let g:indentLine_first_char = '⎸'
@@ -73,8 +85,6 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDAltDelims_java = 1
 
 " Add your own custom formats or override the defaults
-" let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
 
@@ -140,6 +150,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'mattn/emmet-vim'
 Plug 'scooloose/nerdtree'
 Plug 'maxbrunsfeld/vim-yankstack'
