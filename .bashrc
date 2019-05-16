@@ -3,3 +3,12 @@
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias kea='cd /mnt/c/Users/tawai/Dev/KEACode'
+alias dev='cd /mnt/c/Users/tawai/Dev'
+
+[[ -s "/home/twaite/.gvm/scripts/gvm" ]] && source "/home/twaite/.gvm/scripts/gvm"
