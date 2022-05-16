@@ -41,6 +41,12 @@ require'nvim-treesitter.configs'.setup {
 
 require('lualine').setup()
 
+local lsp = require('lsp-zero')
+
+lsp.nvim_workspace()
+lsp.preset('recommended')
+lsp.setup()
+
 -- Autocommands
 vim.cmd([[
   augroup packer_user_config

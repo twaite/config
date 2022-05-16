@@ -15,3 +15,4 @@ opt.hidden = true
 opt.tgc = true
 opt.writebackup = false
 opt.updatetime = 300
+opt.completeopt = 'menu,menuone,noselect'
