@@ -13,3 +13,4 @@ keymap.set('n', '<C-n>', '<cmd>NvimTreeToggle<cr>')
 keymap.set('n', '<leader>r', '<cmd>NvimTreeRefresh<cr>')
 keymap.set('n', '<leader>n', '<cmd>NvimTreeFindFile<cr>')
 
+keymap.set('n', '<esc>', '<cmd>noh<cr>')
