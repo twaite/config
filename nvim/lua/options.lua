@@ -15,4 +15,7 @@ opt.hidden = true
 opt.tgc = true
 opt.writebackup = false
 opt.updatetime = 300
+opt.cmdheight = 2
 opt.completeopt = "menu,menuone,noselect"
+opt.shortmess = opt.shortmess + "c"
+opt.signcolumn = "number"

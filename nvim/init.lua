@@ -2,8 +2,7 @@ require("plugins")
 require("options")
 require("keymaps")
 require("format")
-
-require("nvim-lsp-installer").setup({})
+require("coc")
 
 require("nvim-tree").setup({})
 
@@ -35,11 +34,11 @@ require("nvim-treesitter.configs").setup({
 
 require("lualine").setup()
 
-local lsp = require("lsp-zero")
-
-lsp.nvim_workspace()
-lsp.preset("recommended")
-lsp.setup()
+-- local lsp = require("lsp-zero")
+--
+-- lsp.preset("recommended")
+-- lsp.nvim_workspace()
+-- lsp.setup()
 
 -- Autocommands
 vim.cmd([[
