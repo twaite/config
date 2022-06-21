@@ -19,3 +19,4 @@ opt.cmdheight = 2
 opt.completeopt = "menu,menuone,noselect"
 opt.shortmess = opt.shortmess + "c"
 opt.signcolumn = "number"
+opt.foldlevel = 2

@@ -18,7 +18,15 @@ return require("packer").startup(function()
 
 	use({ "tpope/vim-fugitive" })
 	use({ "mhartington/formatter.nvim" })
-	use({ "nvim-treesitter/nvim-treesitter" })
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			vim.cmd([[
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+    ]])
+		end,
+	})
 
 	use({ "neoclide/coc.nvim", branch = "release" })
 	-- use({

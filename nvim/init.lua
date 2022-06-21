@@ -4,11 +4,15 @@ require("keymaps")
 require("format")
 require("coc")
 
-require("nvim-tree").setup({})
+require("nvim-tree").setup({
+	view = {
+		adaptive_size = true,
+	},
+})
 
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all"
-	ensure_installed = { "lua", "rust", "javascript", "json", "typescript", "tsx" },
+	ensure_installed = { "lua", "rust", "javascript", "json", "typescript", "tsx", "graphql" },
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,
